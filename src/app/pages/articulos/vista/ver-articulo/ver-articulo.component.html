@@ -1,38 +1,37 @@
-<h1>Articulos</h1>
+<p>
+  <mat-toolbar>
+    <span>Articulos</span>
+  </mat-toolbar>
+</p>
+
 <div class="demo-button-container">
-    <button mat-raised-button  class="demo-button">
-      Agregar articulo
-    </button>
-    
-  </div>
-  
-  <table mat-table  class="mat-elevation-z8 demo-table">
-    
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef>No.</th>
-      <td mat-cell *matCellDef="let element">{{element.position}}</td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{element.name}}</td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef>Weight</th>
-      <td mat-cell *matCellDef="let element">{{element.weight}}</td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef>Symbol</th>
-      <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  <button mat-raised-button  class="demo-button">
+    Nuevo
+  </button>
+</div>
+<br>
+
+<table mat-table [dataSource]="data | slice:desde:hasta"  class="mat-elevation-z8" >
+
+  <ng-container matColumnDef="cod_barras">
+    <th mat-header-cell *matHeaderCellDef> cod_barras </th>
+    <td mat-cell *matCellDef="let element"> {{element.cod_barras}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="descripcion">
+    <th mat-header-cell *matHeaderCellDef> descripcion </th>
+    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="precio_compra">
+    <th mat-header-cell *matHeaderCellDef> precio_compra</th>
+    <td mat-cell *matCellDef="let element"> {{element.precio_compra}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [length]="data.length" [pageSize]="pageSize" 
+(page)="cambiarpag($event)"></mat-paginator>
   
