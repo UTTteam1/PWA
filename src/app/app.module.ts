@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ArticulosModule } from './pages/articulos/articulos.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ArticulosModule } from './pages/articulos/articulos.module';
     BrowserModule,
     AppRoutingModule,
     ArticulosModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
