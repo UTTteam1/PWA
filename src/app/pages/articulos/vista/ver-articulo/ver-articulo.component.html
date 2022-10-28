@@ -1,15 +1,13 @@
 <p>
-  <mat-toolbar>
+  <mat-toolbar color="primary">
     <span>Articulos</span>
+    <span class="example-spacer"></span>
+
+   <button mat-stroked-button color="white" (click)="agregar()">Agregar</button>
+  
   </mat-toolbar>
 </p>
 
-<div class="demo-button-container">
-  <button mat-raised-button  class="demo-button">
-    Nuevo
-  </button>
-</div>
-<br>
 
 <table mat-table [dataSource]="data | slice:desde:hasta"  class="mat-elevation-z8" >
 
@@ -28,9 +26,19 @@
     <td mat-cell *matCellDef="let element"> {{element.precio_compra}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action</th>
+    <td mat-cell *matCellDef="let element"> 
+     
+      <button mat-button color="primary" (click)="editarArticulo(element.cod_barras)">edit</button>
+       </td>
+  </ng-container>
+
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
 
 <mat-paginator [length]="data.length" [pageSize]="pageSize" 
 (page)="cambiarpag($event)"></mat-paginator>

@@ -1,34 +1,41 @@
 <p>
-    <mat-toolbar>
-      <span>Agregar articulos</span>
+    <mat-toolbar color="primary">
+      <span> Nuevo Articulo</span>
+      <span class="example-spacer"></span>
+     <button mat-stroked-button color="white" (click)="salir()">Volver</button>
+     
     </mat-toolbar>
   </p>
-<form [formGroup]="articulosForm">
+
+  <div class="inner-wrapper">
+  <form [formGroup]="articuloForm"
+  (ngSubmit)="onSubmit()">
+  
     <!-- 1 -->
     <div fxLayout="row" fxLayout.xs="column" fxLayout.md="column" fxLayoutAlign="start" fxLayoutGap="20">
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>cod_barras</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="cod_barras" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>cod_asociado</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="cod_asociado" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>id_clasificacion</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar clasificacion"/>
+                <input formControlName="id_clasificacion" matInput />
             </mat-form-field>
         </div>
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>cod_interno</mat-label>
-                    <input formControlName="nombre" matInput autocomplete="Ingresar codigo"/>
+                    <input formControlName="cod_interno" matInput />
                 </mat-form-field>
             </div>
     </div>
@@ -38,26 +45,26 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>descripcion</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="descripcion" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>descripcion_corta</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="descripcion_corta" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>cantidad_um</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar clasificacion"/>
+                <input formControlName="cantidad_um" matInput />
             </mat-form-field>
         </div>
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>id_unidad</mat-label>
-                    <input formControlName="nombre" matInput autocomplete="Ingresar codigo"/>
+                    <input formControlName="id_unidad" matInput />
                 </mat-form-field>
             </div>
     </div>
@@ -67,26 +74,26 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>id_proveedor</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="id_proveedor" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>precio_compra</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="precio_compra" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>utilidad</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar clasificacion"/>
+                <input formControlName="utilidad" matInput />
             </mat-form-field>
         </div>
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>precio_venta</mat-label>
-                    <input formControlName="nombre" matInput autocomplete="Ingresar codigo"/>
+                    <input formControlName="precio_venta" matInput />
                 </mat-form-field>
             </div>
     </div>
@@ -96,26 +103,26 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>tipo_articulo</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="tipo_articulo" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>stock</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="stock" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>stock_min</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar clasificacion"/>
+                <input formControlName="stock_min" matInput />
             </mat-form-field>
         </div>
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>stock_max</mat-label>
-                    <input formControlName="nombre" matInput autocomplete="Ingresar codigo"/>
+                    <input formControlName="stock_max" matInput />
                 </mat-form-field>
             </div>
     </div>
@@ -125,26 +132,26 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>iva</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="iva" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>kit_fecha_ini</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="kit_fecha_ini" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>kit_fecha_fin</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar clasificacion"/>
+                <input formControlName="kit_fecha_fin" matInput />
             </mat-form-field>
         </div>
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>articulo_disponible</mat-label>
-                    <input formControlName="nombre" matInput autocomplete="Ingresar codigo"/>
+                    <input formControlName="articulo_disponible" matInput />
                 </mat-form-field>
             </div>
     </div>
@@ -154,26 +161,26 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>kit</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="kit" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>fecha_registro</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="fecha_registro" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>visible</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar clasificacion"/>
+                <input formControlName="visible" matInput />
             </mat-form-field>
         </div>
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>puntos</mat-label>
-                    <input formControlName="nombre" matInput autocomplete="Ingresar codigo"/>
+                    <input formControlName="puntos" matInput />
                 </mat-form-field>
             </div>
     </div>
@@ -183,13 +190,13 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>last_update_inventory</mat-label>
-                <input formControlName="nombre" matInput autocomplete="Ingresar codigo de barras"/>
+                <input formControlName="last_update_inventory" matInput />
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>cve_producto</mat-label>
-                <input formControlName="social" matInput autocomplete="Ingresar codigo asociado" #txtRazonSocial/>
+                <input formControlName="cve_producto" matInput />
             </mat-form-field>
         </div>
     </div>
@@ -197,3 +204,4 @@
     <!-- boton-->
     <button mat-raised-button color="primary">Aceptar</button>
 </form>
+</div>
