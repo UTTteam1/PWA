@@ -14,7 +14,8 @@ import{FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 export class EditarArticuloComponent implements OnInit {
   subs: Subscription[]=[];
   articulosForm: FormGroup;
-
+  articulo!: Articulo;
+ 
 
   constructor(private fb:FormBuilder, private service:ArticuloService, 
     private router:Router, private actRoute: ActivatedRoute 
@@ -57,7 +58,7 @@ export class EditarArticuloComponent implements OnInit {
 
 ngOnInit(): void {
 this.service.getId(this.actRoute.snapshot.params['cod_barras']).subscribe((
-  result: any
+  result: Articulo
 )=>{
   this.articulosForm = new FormGroup({
     cod_barras : new FormControl(result['cod_barras']),
@@ -94,12 +95,15 @@ onSubmit(){
   console.log(this.articulosForm.value);
    this.service.updateArticulo(this.articulosForm.value).
    subscribe((result)=>{
-    console.log(result);
+    this.articulo=result;
+    alert("Articulo actualizado");
+      this.router.navigate(["ver-articulo"]);
    })
 }
 
 
 salir():void{
+  alert("¿Seguro quieres salir?");
   this.router.navigate (['ver-articulo'])
 }
 }

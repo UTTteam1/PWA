@@ -1,8 +1,9 @@
-import { Component, Inject, OnInit, ViewChild,ElementRef, AfterViewInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit,OnDestroy } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ArticuloService } from 'src/app/services/articulo.service';
+import { Articulo } from 'src/app/interfaces/articulo';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { ArticuloService } from 'src/app/services/articulo.service';
 export class RegistroArticuloComponent implements OnInit,AfterViewInit,OnDestroy {
   subs: Subscription[]=[];
   articuloForm: FormGroup;
+  articulo!: Articulo;
   
   constructor(private fb:FormBuilder, private service:ArticuloService, private router:Router) {
 
@@ -47,22 +49,25 @@ export class RegistroArticuloComponent implements OnInit,AfterViewInit,OnDestroy
  
     });
     
-    this.subs.push(this.articuloForm.valueChanges.subscribe(console.log));
+    // this.subs.push(this.articuloForm.valueChanges.subscribe(console.log));
    }
 
 ngOnInit(): void {
 }
+
 onSubmit(){
 this.service.createArticulo(this.articuloForm.value).subscribe((x)=>{
-  console.log(x);
+  alert("Articulo agregado");
   this.router.navigate(['ver-articulo']);
-});
+},
+error => console.log(error)
+);
 }
 
 salir():void{
+  alert("¿Seguro quieres salir?");
   this.router.navigate (['ver-articulo']);
 }
-
 ngAfterViewInit():void{
 
 }
