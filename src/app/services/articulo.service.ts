@@ -9,19 +9,19 @@ import { Articulo } from '../interfaces/articulo';
 export class ArticuloService {
   constructor(private http: HttpClient) {}
 
-  private url = 'http://localhost:8004/api/articulo';
+  private url = 'http://localhost:1921/api/articulo';
 
-  getArticulo(){
+  getArticulo():Observable<Articulo[]>{
     return this.http.get<Articulo[]>(this.url);
   }
-  getId(cod_barras: string){
+  getId(cod_barras: string): Observable<Articulo>{
     return this.http.get<Articulo>( this.url+"/"+cod_barras);
   }
-  createArticulo(articulo: Articulo) {
+  createArticulo(articulo: Articulo){
     console.log(articulo);
     return this.http.post<Articulo>(this.url, articulo);
   }
-  updateArticulo(articulo:Articulo) {
+  updateArticulo(articulo:Articulo){
     return this.http.put<Articulo>(
       this.url+"/"+articulo.cod_barras, articulo
     );
