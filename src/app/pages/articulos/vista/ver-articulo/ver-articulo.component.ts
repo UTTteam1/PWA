@@ -27,13 +27,10 @@ export class VerArticuloComponent implements OnInit {
     this.data = x;
   });
   }
-//   editarArticulo(cod_barras:string){
-// this.router.navigate(['editar-articulo', cod_barras]);
-//   }
-editarArticulo(cod_barras:string){
-  localStorage.setItem('cod_barras', cod_barras);
-this.router.navigate(['editar-articulo']);
-}
+  editarArticulo(cod_barras:string){
+this.router.navigate(['editar-articulo', cod_barras]);
+  }
+
 
   agregar():void{
 this.router.navigate(['registro-articulo']);
