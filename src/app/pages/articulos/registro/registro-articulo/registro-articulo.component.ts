@@ -15,7 +15,6 @@ export class RegistroArticuloComponent implements OnInit,AfterViewInit,OnDestroy
   subs: Subscription[]=[];
   articuloForm: FormGroup;
   articulo!: Articulo;
-  
   constructor(private fb:FormBuilder, private service:ArticuloService, private router:Router) {
 
     this.articuloForm = this.fb.group({
@@ -53,10 +52,14 @@ export class RegistroArticuloComponent implements OnInit,AfterViewInit,OnDestroy
    }
 
 ngOnInit(): void {
+  
 }
 
 onSubmit(){
-this.service.createArticulo(this.articuloForm.value).subscribe((x)=>{
+  console.log(this.articuloForm.value);
+this.service.createArticulo(this.articuloForm.value).
+subscribe((x)=>{
+  this.articulo=x;
   alert("Articulo agregado");
   this.router.navigate(['ver-articulo']);
 },

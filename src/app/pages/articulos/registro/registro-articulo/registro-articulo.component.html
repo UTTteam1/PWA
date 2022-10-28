@@ -19,12 +19,7 @@
                 <input formControlName="cod_barras" matInput />
             </mat-form-field>
         </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>cod_asociado</mat-label>
-                <input formControlName="cod_asociado" matInput />
-            </mat-form-field>
-        </div>
+      
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>id_clasificacion</mat-label>
@@ -32,12 +27,7 @@
             </mat-form-field>
         </div>
         
-            <div fxFlex>
-                <mat-form-field  class="input-full-width" appearance="outline">
-                    <mat-label>cod_interno</mat-label>
-                    <input formControlName="cod_interno" matInput />
-                </mat-form-field>
-            </div>
+           
     </div>
 
      <!-- 2-->
@@ -54,17 +44,18 @@
                 <input formControlName="descripcion_corta" matInput />
             </mat-form-field>
         </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>cantidad_um</mat-label>
-                <input formControlName="cantidad_um" matInput />
-            </mat-form-field>
-        </div>
+       
         
             <div fxFlex>
                 <mat-form-field  class="input-full-width" appearance="outline">
                     <mat-label>id_unidad</mat-label>
-                    <input formControlName="id_unidad" matInput />
+                  
+                    <select matNativeControl formControlName="id_unidad">
+                        <option value="92ECBFED-1812-4FBA-8D04-1B6A0AE60839">92ECBFED-1812-4FBA-8D04-1B6A0AE60839</option>
+                        <option value="2C0D16EC-329B-4709-97BA-4A3FC5F7E780">2C0D16EC-329B-4709-97BA-4A3FC5F7E780</option>
+                        <option value="AC418555-FA67-40F5-AD69-6B9D9D2079AB">AC418555-FA67-40F5-AD69-6B9D9D2079AB</option>
+                        <option value="BB7DF3BE-0580-4394-847E-7C4B1F08A0D2">BB7DF3BE-0580-4394-847E-7C4B1F08A0D2</option>
+                      </select>
                 </mat-form-field>
             </div>
     </div>
@@ -74,7 +65,12 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>id_proveedor</mat-label>
-                <input formControlName="id_proveedor" matInput />
+                <select matNativeControl formControlName="id_proveedor">
+                    <option value="20A17E12-3BA4-40D7-8B68-00485036DFF9">20A17E12-3BA4-40D7-8B68-00485036DFF9</option>
+                    <option value="EF69924A-ADB4-4EF2-A1E5-007CE09C590A">EF69924A-ADB4-4EF2-A1E5-007CE09C590A</option>
+                    <option value="4EBD0CDF-DA64-45E8-B4DD-00A9ADBD686F">4EBD0CDF-DA64-45E8-B4DD-00A9ADBD686F</option>
+                    <option value="C6EBF9BC-B1ED-46BC-850B-0285BB5C6AE2">C6EBF9BC-B1ED-46BC-850B-0285BB5C6AE2</option>
+                  </select>
             </mat-form-field>
         </div>
         <div fxFlex>
@@ -112,87 +108,12 @@
                 <input formControlName="stock" matInput />
             </mat-form-field>
         </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>stock_min</mat-label>
-                <input formControlName="stock_min" matInput />
-            </mat-form-field>
-        </div>
-        
-            <div fxFlex>
-                <mat-form-field  class="input-full-width" appearance="outline">
-                    <mat-label>stock_max</mat-label>
-                    <input formControlName="stock_max" matInput />
-                </mat-form-field>
-            </div>
-    </div>
-
-     <!-- 5-->
-     <div fxLayout="row" fxLayout.xs="column" fxLayout.md="column" fxLayoutAlign="start" fxLayoutGap="20">
-        <div fxFlex>
-            <mat-form-field  class="input-full-width" appearance="outline">
-                <mat-label>iva</mat-label>
-                <input formControlName="iva" matInput />
-            </mat-form-field>
-        </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>kit_fecha_ini</mat-label>
-                <input formControlName="kit_fecha_ini" matInput />
-            </mat-form-field>
-        </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>kit_fecha_fin</mat-label>
-                <input formControlName="kit_fecha_fin" matInput />
-            </mat-form-field>
-        </div>
-        
-            <div fxFlex>
-                <mat-form-field  class="input-full-width" appearance="outline">
-                    <mat-label>articulo_disponible</mat-label>
-                    <input formControlName="articulo_disponible" matInput />
-                </mat-form-field>
-            </div>
-    </div>
-
-    <!-- 6-->
-    <div fxLayout="row" fxLayout.xs="column" fxLayout.md="column" fxLayoutAlign="start" fxLayoutGap="20">
-        <div fxFlex>
-            <mat-form-field  class="input-full-width" appearance="outline">
-                <mat-label>kit</mat-label>
-                <input formControlName="kit" matInput />
-            </mat-form-field>
-        </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>fecha_registro</mat-label>
-                <input formControlName="fecha_registro" matInput />
-            </mat-form-field>
-        </div>
-        <div fxFlex>
-            <mat-form-field class="input-full-width" appearance="outline">
-                <mat-label>visible</mat-label>
-                <input formControlName="visible" matInput />
-            </mat-form-field>
-        </div>
-        
-            <div fxFlex>
-                <mat-form-field  class="input-full-width" appearance="outline">
-                    <mat-label>puntos</mat-label>
-                    <input formControlName="puntos" matInput />
-                </mat-form-field>
-            </div>
+       
     </div>
 
     <!-- 7-->
     <div fxLayout="row" fxLayout.xs="column" fxLayout.md="column" fxLayoutAlign="start" fxLayoutGap="20">
-        <div fxFlex>
-            <mat-form-field  class="input-full-width" appearance="outline">
-                <mat-label>last_update_inventory</mat-label>
-                <input formControlName="last_update_inventory" matInput />
-            </mat-form-field>
-        </div>
+     
         <div fxFlex>
             <mat-form-field class="input-full-width" appearance="outline">
                 <mat-label>cve_producto</mat-label>
