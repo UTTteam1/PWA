@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { Observable} from 'rxjs';
 import { Articulo } from 'src/app/interfaces/articulo';
 import { ArticuloService } from 'src/app/services/articulo.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,9 +15,10 @@ export class VerArticuloComponent implements OnInit {
 
   
  data: Articulo[]= [];
- displayedColumns= ['cod_barras', 'descripcion', 'precio_compra']
+ 
+ displayedColumns= ['cod_barras', 'descripcion', 'precio_compra', 'action']
 
- constructor(private service: ArticuloService){
+ constructor(private service: ArticuloService, private router:Router){
 
  }
  
@@ -26,6 +26,17 @@ export class VerArticuloComponent implements OnInit {
     this.service.getArticulo().subscribe((x)=> {
     this.data = x;
   });
+  }
+//   editarArticulo(cod_barras:string){
+// this.router.navigate(['editar-articulo', cod_barras]);
+//   }
+editarArticulo(cod_barras:string){
+  localStorage.setItem('cod_barras', cod_barras);
+this.router.navigate(['editar-articulo']);
+}
+
+  agregar():void{
+this.router.navigate(['registro-articulo']);
   }
 
   // Paginacion

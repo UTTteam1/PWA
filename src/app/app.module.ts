@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ArticulosModule } from './pages/articulos/articulos.module';
-import { FormsModule } from '@angular/forms';
+import { ArticuloService } from 'src/app/services/articulo.service';
 
 @NgModule({
   declarations: [
@@ -15,10 +15,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ArticulosModule,
-    HttpClientModule,
-    FormsModule 
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [ArticuloService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
