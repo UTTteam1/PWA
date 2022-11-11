@@ -29,5 +29,10 @@ export class ArticuloService {
   deletePersona(articulo:Articulo){
     return this.http.delete<Articulo>(this.url+"/"+articulo.cod_barras);
   }
+ getVenta (){
+  const urlAPI =
+      "http://localhost:1921/api/ventaArticulo";
+    return this.http.get(urlAPI);
+ }
  
 }

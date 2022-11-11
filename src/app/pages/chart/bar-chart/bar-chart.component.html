@@ -1,1 +1,11 @@
-<p>bar-chart works!</p>
+<p>
+    <mat-toolbar color="primary">
+      <span> Ventas</span>
+      <span class="example-spacer"></span>
+      <button mat-stroked-button color="white" (click)="salir()">Volver</button>
+    </mat-toolbar>
+  </p>
+  
+  <div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div>
