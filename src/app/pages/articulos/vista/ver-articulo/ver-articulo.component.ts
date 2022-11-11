@@ -36,6 +36,10 @@ this.router.navigate(['editar-articulo', cod_barras]);
 this.router.navigate(['registro-articulo']);
   }
 
+  venta():void{
+    this.router.navigate(['ventas1']);
+      }
+
   // Paginacion
   pageSize = 100;
   desde:number = 0;

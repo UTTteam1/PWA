@@ -8,7 +8,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
 
@@ -21,7 +21,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatIconModule,
     MatToolbarModule,
     MatTableModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTabsModule
    
   ]
   

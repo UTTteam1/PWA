@@ -9,13 +9,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { VerArticuloComponent } from './vista/ver-articulo/ver-articulo.component';
 import { EditarArticuloComponent } from './editar/editar-articulo/editar-articulo.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BarChartComponent } from '../chart/bar-chart/bar-chart.component'; 
+import { LineChartComponent } from '../chart/line-chart/line-chart.component';
 
 
 @NgModule({
   declarations: [
     RegistroArticuloComponent,
     VerArticuloComponent,
-    EditarArticuloComponent
+    EditarArticuloComponent,
+    BarChartComponent, 
+    LineChartComponent
+   
   ],
   imports: [
     BrowserAnimationsModule,
@@ -28,6 +33,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
   exports:[
     RegistroArticuloComponent,
     VerArticuloComponent
+   
   ]
 })
 export class ArticulosModule { }
