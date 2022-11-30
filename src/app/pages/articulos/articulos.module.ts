@@ -11,6 +11,7 @@ import { EditarArticuloComponent } from './editar/editar-articulo/editar-articul
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BarChartComponent } from '../chart/bar-chart/bar-chart.component'; 
 import { LineChartComponent } from '../chart/line-chart/line-chart.component';
+import { LoginComponent } from '../login/login.component';
 
 
 @NgModule({
@@ -19,8 +20,8 @@ import { LineChartComponent } from '../chart/line-chart/line-chart.component';
     VerArticuloComponent,
     EditarArticuloComponent,
     BarChartComponent, 
-    LineChartComponent
-   
+    LineChartComponent,
+   LoginComponent 
   ],
   imports: [
     BrowserAnimationsModule,
@@ -32,8 +33,8 @@ import { LineChartComponent } from '../chart/line-chart/line-chart.component';
   ],
   exports:[
     RegistroArticuloComponent,
-    VerArticuloComponent
-   
+    VerArticuloComponent,
+    LoginComponent 
   ]
 })
 export class ArticulosModule { }

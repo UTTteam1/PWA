@@ -8,6 +8,7 @@ import { ArticulosModule } from './pages/articulos/articulos.module';
 import { ArticuloService } from 'src/app/services/articulo.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
