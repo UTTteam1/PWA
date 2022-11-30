@@ -54,7 +54,7 @@ export class BarChartComponent implements OnInit {
 }
 
   salir():void{
-    this.router.navigate (['ver-articulo']);
+    this.router.navigate (['login']);
   }
 
   }
