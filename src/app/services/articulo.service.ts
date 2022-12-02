@@ -19,7 +19,6 @@ const httpOptions = {
 })
 export class ArticuloService {
 
-url1= 'https://localhost:1921/api/token';
 
 public get usuariodata(): Usuario{
   return (JSON.parse(localStorage.getItem('usuario') || '{}')) 
@@ -28,10 +27,11 @@ public get usuariodata(): Usuario{
   constructor(private http: HttpClient) {}
 
   //login
+  url1= 'https://localhost:1921/api';
   
   login(user_name:string, password:string): Observable<Data>{
-    console.log(user_name);
-    return this.http.post<Data>(this.url1 + "/" + user_name + "/" + password , httpOptions).pipe(
+    console.log(user_name, password);
+    return this.http.post<Data>(this.url1 + '/user' +'/' + user_name +'/' + password, httpOptions).pipe(
         map( res =>{
             if (res != null){                  
                 // const usuario : Usuario = res;
@@ -41,7 +41,7 @@ public get usuariodata(): Usuario{
             }
             else{
                 return res;
-                alert("Eror");
+                alert("Error");
             }
             return res;
 

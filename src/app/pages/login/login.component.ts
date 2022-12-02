@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
     const val = this.loginForm.value;
 
     this.articuloService.login(val.user_name, val.password).subscribe(res=>{
+      console.log (res);
       if(res !=null){
           console.log(localStorage.getItem('usuario'))
           this.router.navigate(['ventas'])
@@ -50,6 +51,7 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
       }
   })
 }
+ 
   
 
 
