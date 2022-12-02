@@ -12,7 +12,8 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>User</mat-label>
-                <input formControlName="user" matInput />
+                <input formControlName="user_name" required matInput />
+                <mat-hint>El nombre de usuario debe ser valido</mat-hint>
             </mat-form-field>
         </div>    
     </div>
@@ -21,7 +22,8 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>Password</mat-label>
-                <input formControlName="pass" matInput type="password"/>
+                <input formControlName="password" required matInput type="password"/>
+                <mat-hint>La contraseña debe ser valida</mat-hint>
             </mat-form-field>
         </div>    
     </div>

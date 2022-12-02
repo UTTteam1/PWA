@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit,OnDestroy } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { ArticuloService } from 'src/app/services/articulo.service';
 
 
 @Component({
@@ -12,14 +13,20 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
 
   subs: Subscription[]=[];
+  
   loginForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private router:Router) { 
+
+  constructor(private fb:FormBuilder, private router:Router ,private articuloService: ArticuloService) { 
+
+    if(this.articuloService.usuariodata){
+      this.router.navigate(['/ventas'])
+  }
 
     this.loginForm = this.fb.group({
 
-      user:['',Validators.required],
-      pass: ['',Validators.required]
+      user_name:['',Validators.required],
+      password: ['',Validators.required]
       
     });
     
@@ -30,10 +37,16 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    console.log(this.loginForm.value);
-    this.router.navigate(['ventas']);
-  }
+  onSubmit() {
+    this.articuloService.login(this.loginForm.value).subscribe(res=>{
+      if(res !=null){
+          // console.log(localStorage.getItem('usuario'))
+          this.router.navigate(['/ventas'])
+      }
+  })
+}
+  
+
 
   ngAfterViewInit():void{
 
@@ -44,4 +57,4 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
 
   }
 
-
+  
