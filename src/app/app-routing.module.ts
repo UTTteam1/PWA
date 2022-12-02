@@ -6,16 +6,21 @@ import { EditarArticuloComponent } from './pages/articulos/editar/editar-articul
 import { BarChartComponent } from './pages/chart/bar-chart/bar-chart.component';
 import { LineChartComponent } from './pages/chart/line-chart/line-chart.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UserGuardGuard } from './services/user-guard.guard';
+import { HomeComponent } from './pages/home/home/home.component';
 
 const routes: Routes = [
   {path: 'ver-articulo', component:VerArticuloComponent},
-  {path: '', redirectTo:'login', pathMatch:'full'},
   {path: 'registro-articulo', component:RegistroArticuloComponent},
   {path: 'editar-articulo/:cod_barras', component:EditarArticuloComponent},
-  {path: 'ventas', component:BarChartComponent},
+  {path: 'ventas', component:BarChartComponent, canActivate:[UserGuardGuard]},
   {path: 'ventas1', component:LineChartComponent},
-  {path: 'login', component:LoginComponent}
-
+  
+  //login
+  {path: '', redirectTo:'login', pathMatch:'full'},
+  {path: 'login', component:LoginComponent},
+  {path: 'home', component:HomeComponent}
+ 
 ];
 
 @NgModule({
