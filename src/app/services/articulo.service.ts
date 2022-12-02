@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators'
 import { Articulo } from '../interfaces/articulo';
 import { Usuario } from '../interfaces/usuario';
 import { Data } from '@angular/router';
+import { User } from '../interfaces/user';
 
 
 
@@ -18,7 +19,7 @@ const httpOptions = {
 })
 export class ArticuloService {
 
-url1:string = 'https://localhost:1921/api/login';
+url1= 'https://localhost:1921/api/token';
 
 public get usuariodata(): Usuario{
   return (JSON.parse(localStorage.getItem('usuario') || '{}')) 
@@ -28,9 +29,9 @@ public get usuariodata(): Usuario{
 
   //login
   
-  login(usuario: Usuario): Observable<Data>{
-    console.log(usuario);
-    return this.http.post<Data>(this.url1,usuario, httpOptions).pipe(
+  login(user_name:string, password:string): Observable<Data>{
+    console.log(user_name);
+    return this.http.post<Data>(this.url1 + "/" + user_name + "/" + password , httpOptions).pipe(
         map( res =>{
             if (res != null){                  
                 // const usuario : Usuario = res;
@@ -40,7 +41,7 @@ public get usuariodata(): Usuario{
             }
             else{
                 return res;
-                
+                alert("Eror");
             }
             return res;
 
