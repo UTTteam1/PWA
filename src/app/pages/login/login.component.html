@@ -1,6 +1,9 @@
 
     <mat-card>
         <mat-card-title>Login</mat-card-title>
+        <div class = "container">
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/two-color-icon-library/user-286.png" width = "100" height = "100">
+    </div>
     <mat-card-content>
 
   <form [formGroup]="loginForm"
@@ -12,25 +15,26 @@
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>User</mat-label>
-                <input formControlName="user_name" required matInput />
-                <mat-hint>El nombre de usuario debe ser valido</mat-hint>
+                <input formControlName="user_name" required matInput placeholder="Digite su nombre de usuario"/>
+                
             </mat-form-field>
         </div>    
     </div>
+
        <!-- 2-->
        <div fxLayout="row" fxLayout.xs="column" fxLayout.md="column" fxLayoutAlign="start" fxLayoutGap="20">
         <div fxFlex>
             <mat-form-field  class="input-full-width" appearance="outline">
                 <mat-label>Password</mat-label>
-                <input formControlName="password" required matInput type="password"/>
-                <mat-hint>La contraseña debe ser valida</mat-hint>
+                <input formControlName="password" required matInput type="password" placeholder="Digite su contraseña"/>
+         
             </mat-form-field>
         </div>    
     </div>
 
     <!-- boton-->
     <div class="button">
-        <button  mat-raised-button color="primary">Entrar</button>
+        <button  mat-raised-button type="submit" color="primary">Entrar</button>
       </div>
     
 </form>
