@@ -3,6 +3,7 @@ import{FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ArticuloService } from 'src/app/services/articulo.service';
+import { User } from 'src/app/interfaces/user';
 
 
 @Component({
@@ -13,14 +14,15 @@ import { ArticuloService } from 'src/app/services/articulo.service';
 export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
 
   subs: Subscription[]=[];
-  
+  user!: User;
   loginForm: FormGroup;
 
 
   constructor(private fb:FormBuilder, private router:Router ,private articuloService: ArticuloService) { 
 
+   
     if(this.articuloService.usuariodata){
-      this.router.navigate(['/ventas'])
+      this.router.navigate(['ventas'])
   }
 
     this.loginForm = this.fb.group({
@@ -38,10 +40,13 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
   }
 
   onSubmit() {
-    this.articuloService.login(this.loginForm.value).subscribe(res=>{
+    const val = this.loginForm.value;
+
+    this.articuloService.login(val.user_name, val.password).subscribe(res=>{
       if(res !=null){
-          // console.log(localStorage.getItem('usuario'))
-          this.router.navigate(['/ventas'])
+          console.log(localStorage.getItem('usuario'))
+          this.router.navigate(['ventas'])
+          alert("Bienvenido");
       }
   })
 }

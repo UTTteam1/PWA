@@ -10,16 +10,16 @@ import { UserGuardGuard } from './services/user-guard.guard';
 import { HomeComponent } from './pages/home/home/home.component';
 
 const routes: Routes = [
-  {path: 'ver-articulo', component:VerArticuloComponent},
-  {path: 'registro-articulo', component:RegistroArticuloComponent},
-  {path: 'editar-articulo/:cod_barras', component:EditarArticuloComponent},
+  {path: 'ver-articulo', component:VerArticuloComponent, canActivate:[UserGuardGuard]},
+  {path: 'registro-articulo', component:RegistroArticuloComponent, canActivate:[UserGuardGuard]},
+  {path: 'editar-articulo/:cod_barras', component:EditarArticuloComponent, canActivate:[UserGuardGuard]},
   {path: 'ventas', component:BarChartComponent, canActivate:[UserGuardGuard]},
-  {path: 'ventas1', component:LineChartComponent},
+  {path: 'ventas1', component:LineChartComponent, canActivate:[UserGuardGuard]},
   
   //login
   {path: '', redirectTo:'login', pathMatch:'full'},
   {path: 'login', component:LoginComponent},
-  {path: 'home', component:HomeComponent}
+  {path: 'home', component:HomeComponent, canActivate:[UserGuardGuard]}
  
 ];
 
