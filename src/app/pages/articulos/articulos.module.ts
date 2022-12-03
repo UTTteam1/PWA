@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BarChartComponent } from '../chart/bar-chart/bar-chart.component'; 
 import { LineChartComponent } from '../chart/line-chart/line-chart.component';
 import { LoginComponent } from '../login/login.component';
+import { authInterceptorProviders } from 'src/app/services/jwt-interceptor.interceptor';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LoginComponent } from '../login/login.component';
     RegistroArticuloComponent,
     VerArticuloComponent,
     LoginComponent 
-  ]
+  ],
+  providers: [authInterceptorProviders],
 })
 export class ArticulosModule { }

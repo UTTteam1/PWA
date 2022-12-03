@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ArticulosModule } from './pages/articulos/articulos.module';
 import { ArticuloService } from 'src/app/services/articulo.service';
+import { authInterceptorProviders } from './services/jwt-interceptor.interceptor';
 
 
 
@@ -18,10 +19,10 @@ import { ArticuloService } from 'src/app/services/articulo.service';
     BrowserModule,
     AppRoutingModule,
     ArticulosModule,
-    HttpClientModule
-    
+    HttpClientModule,
+   
   ],
-  providers: [ArticuloService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
