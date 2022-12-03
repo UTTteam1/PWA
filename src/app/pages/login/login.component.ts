@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
     this.articuloService.login(val.user_name, val.password).subscribe(res=>{
       console.log (res);
       if(res !=null){
+
+          localStorage.setItem('usuario',res.token);
           console.log(localStorage.getItem('usuario'))
           this.router.navigate(['ventas'])
           alert("Bienvenido");

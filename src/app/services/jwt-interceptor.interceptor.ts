@@ -13,12 +13,12 @@ export class JwtInterceptorInterceptor implements HttpInterceptor {
     // const usuario=this.apiAuth.usuariodata;
     const usuario=localStorage.getItem('usuario')
 
-   if(usuario !=null){
+   if(usuario !== null){
             const token=usuario.replace(/(")/gm,"")
 
             request=request.clone({
                 setHeaders:{
-                    Authorization: `Bearer ${token}`
+                    Authorization: `${token}`
                 }
             })
         }

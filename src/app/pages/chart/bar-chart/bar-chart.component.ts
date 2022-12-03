@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables} from 'chart.js';
 import { Router } from '@angular/router';
+import { ArticuloService } from 'src/app/services/articulo.service';
 
 @Component({
   selector: 'app-bar-chart',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class BarChartComponent implements OnInit {
  
-  constructor(private router:Router ) { 
+  constructor(private router:Router , private art: ArticuloService) { 
     Chart.register(...registerables);
   }
   public chart: any;
@@ -53,9 +54,10 @@ export class BarChartComponent implements OnInit {
 
 }
 
-  salir():void{
-    this.router.navigate (['login']);
-  }
+public Salir(){
+  this.art.logout()
+  window.location.reload();
+}
 
   }
 
