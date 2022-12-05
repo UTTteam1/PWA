@@ -39,6 +39,12 @@ this.router.navigate(['registro-articulo']);
   venta():void{
     this.router.navigate(['ventas1']);
       }
+  
+public salir(){
+        this.service.logout()
+        window.location.reload();
+        this.router.navigate(['login']);
+      }
 
   // Paginacion
   pageSize = 100;
