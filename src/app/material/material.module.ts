@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTabsModule} from '@angular/material/tabs';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -24,8 +24,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatToolbarModule,
     MatTableModule,
     MatDatepickerModule,
-    MatTabsModule,
-    MatSnackBarModule
+    MatTabsModule
    
    
   ]

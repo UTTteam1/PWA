@@ -18,7 +18,7 @@ export class LineChartComponent implements AfterViewInit {
   chart: any = [];
 
 
-  constructor(private router: Router, private service: ArticuloService, private http: HttpClient) {
+  constructor(private rout: Router, private service: ArticuloService, private http: HttpClient) {
     Chart.register(...registerables);
   }
 
@@ -82,9 +82,10 @@ borderWidth: 3,
 
   }
 
-
-  salir(): void {
-    this.router.navigate(['ver-articulo']);
+  volver(): void {
+    this.rout.navigate(['ver-articulo']);
   }
+
+  
 
 }
