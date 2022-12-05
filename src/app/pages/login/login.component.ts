@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
 
           localStorage.setItem('usuario',res.token);
           console.log(localStorage.getItem('usuario'))
-          this.router.navigate(['ventas'])
+          this.router.navigate(['ver-articulo'])
           alert("Bienvenido");
       }
   })
